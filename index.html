@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <title>The early universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <header>
+      <h1 id="main-title">The early universe</h1>
+  </header>
+
+  <div class="tab">
+    <button class="tablinks"
+    onclick="openTab(event, 'intro')"
+    id="intro-button">Introduction</button>
+    <button class="tablinks"
+    onclick="openTab(event, 'sc')"
+    id="sc-button">Standard Cosmology</button>
+    <button class="tablinks"
+    onclick="openTab(event, 'therm')"
+    id="therm-button">Thermodynamics</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="intro" class="tabcontent"></div>
+  
+  <div id="sc" class="tabcontent"></div>
+  
+  <div id="therm" class="tabcontent"></div>
+
+  <script src="js/tabs.js"></script>
+
+  <script> 
+    const texts = ["intro","sc","therm"];
+    for (let i = 0; i < texts.length; i++) {
+      $("#"+texts[i]+"-button").click(function() {
+        $("#"+texts[i]).load("html/"+texts[i]+".html");
+      });
+    };
+  </script>
+
+  <script>
+    $("#intro-button").click();
+  </script>
+
+
+  <footer>
+      <section>
+          <a href="#main-title"> Go up</a>
+          <a href="mailto:diego.riosp@udea.edu.co">Contact me</a>    
+      </section>
+      <p>Creative commons licence</p>
+  </footer>
+</body>
+</html>
